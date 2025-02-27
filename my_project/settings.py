@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+import dj_database_url
+
 # from django.conf.global_settings import STATICFILES_DIRS, DATABASES, MEDIA_URL
 # import dj_database_url
 
@@ -88,9 +90,12 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default':dj_database_url.parse(os.environ.get('DATABASE_URL'))
-# }
+
+
+DATABASES["default"] = dj_database_url.parse("postgresql://testdata_db_user:n7fYYwOR4yaB4kP0dnNrilCnp1e2lgGQ@dpg-cuvvkva3esus73e2sk90-a.oregon-postgres.render.com/testdata_db")
+
+
+
 
 
 # Password validation
